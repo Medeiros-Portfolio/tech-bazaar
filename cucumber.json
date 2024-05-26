@@ -1,0 +1,13 @@
+{
+  "default": {
+    "requireModule": [
+      "ts-node/register"
+    ],
+    "require": [
+      "tests/**/*.test.ts"
+    ],
+    "format": [
+      "html:./reports/report.html"
+    ]
+  }
+}
