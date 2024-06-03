@@ -4,14 +4,32 @@
   "description": "TechBazaar is a cutting-edge sales management platform that harnesses the power of modern technologies to streamline and optimize sales operations for organizations of all sizes. Designed with scalability and performance in mind, TechBazaar provides a comprehensive suite of features to manage every aspect of the sales lifecycle, from product cataloging to sales tracking and analysis.",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js"
+    "test": "cucumber-js",
+    "debug": "node -r ts-node/register -r dotenv/config debug/index.ts",
+    "dev": "node -r ts-node/register -r dotenv/config src/shared/infra/http/server.ts"
   },
   "keywords": [],
   "author": "Rafael Medeiros <rafaelmedrib@gmail.com> (http://www.rmedeiros.dev/)",
   "license": "ISC",
   "devDependencies": {
     "@cucumber/cucumber": "^10.8.0",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.12",
+    "@types/supertest": "^6.0.2",
+    "axios": "^1.7.2",
+    "prisma": "^5.14.0",
+    "supertest": "^7.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.14.0",
+    "dotenv": "^16.4.5",
+    "env-var": "^7.5.0",
+    "express": "^4.19.2",
+    "express-async-errors": "^3.1.1",
+    "reflect-metadata": "^0.2.2",
+    "tsyringe": "^4.8.0",
+    "zod": "^3.23.8"
   }
 }
