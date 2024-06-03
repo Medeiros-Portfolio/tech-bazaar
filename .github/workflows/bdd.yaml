@@ -1,0 +1,49 @@
+name: BDD
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_DB: tech_bazaar
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: pgmock
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      DATABASE_URL: postgresql://postgres:pgmock@localhost:5432/tech_bazaar
+      APP_SECRET: f850d046df3c8eec8237444cc70b3ef0
+      PORT: 3000
+      CI: true
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run migrations
+        run: npx prisma migrate deploy 
+
+      - name: Run tests
+        run: npm t
