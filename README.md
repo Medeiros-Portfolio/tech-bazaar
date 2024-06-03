@@ -1,4 +1,6 @@
 # tech-bazaar
+
+## Description
 TechBazaar is a cutting-edge sales management platform that harnesses the power of modern technologies to streamline and optimize sales operations for organizations of all sizes. Designed with scalability and performance in mind, TechBazaar provides a comprehensive suite of features to manage every aspect of the sales lifecycle, from product cataloging to sales tracking and analysis.
 
 At its core, TechBazaar enables organizations to create and manage their sales structures, including stores or taskforces, sales teams, and product catalogs. Sales representatives can easily record transactions and track their performance metrics, while managers gain valuable insights through real-time sales data visualizations and reports.
